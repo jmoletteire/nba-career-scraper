@@ -123,10 +123,10 @@ The scraper sends well-formatted email reports including:
 - Jobs grouped by team
 - For each job:
   - Job title
-  - Location (if available)
-  - Description preview
   - Direct application link
   - Timestamp when scraped
+
+Feel free to fork and scrape more info!
 
 ## ⚙️ Configuration Options
 
@@ -180,12 +180,12 @@ Logs are automatically created in the `logs/` directory with detailed informatio
 
 ### Manual Team URL Updates
 
-If automatic discovery fails, you can manually update `data/team_urls.json`:
+If a link is stale, you can manually update `data/team_urls.json`:
 
 ```json
 {
-  "Los Angeles Lakers": "https://www.nba.com/lakers/careers",
-  "Golden State Warriors": "https://www.nba.com/warriors/careers"
+  "Boston Celtics": "https://www.nba.com/celtics/careers",
+  "Los Angeles Lakers": "https://www.teamworkonline.com/basketball-jobs/los-angeles-lakers/los-angeles-lakers-jobs"
 }
 ```
 
@@ -221,7 +221,7 @@ python -m pytest tests/
 python -m pytest tests/test_scraper.py
 ```
 
-## 📝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -229,67 +229,17 @@ python -m pytest tests/test_scraper.py
 4. Add tests if applicable
 5. Submit a pull request
 
-## ⚠️ Important Notes
+## Important Notes
 
 - **Rate Limiting**: The scraper includes delays between requests to be respectful to NBA team websites
 - **Terms of Service**: Ensure your usage complies with each team's website terms of service
 - **Data Accuracy**: Job listings are scraped from public pages; always verify information on the official site
 - **Privacy**: Store email credentials securely and never commit them to version control
 
-## 📄 License
+## License
 
 This project is for educational and personal use. Please respect website terms of service and use responsibly.
 
 ---
 
-**Happy job hunting! 🏀💼**
-│ ├── test_scraper.py # Unit tests for the JobScraper class
-│ └── test_email_sender.py # Unit tests for the EmailSender class
-├── requirements.txt # Project dependencies
-├── .env.example # Template for environment variables
-├── .gitignore # Files and directories to ignore by Git
-└── README.md # Project documentation
-
-```
-
-## Setup Instructions
-
-1. **Clone the repository:**
-```
-
-git clone <repository-url>
-cd nba-career-scraper
-
-```
-
-2. **Install dependencies:**
-Make sure you have Python installed, then run:
-```
-
-pip install -r requirements.txt
-
-```
-
-3. **Configure environment variables:**
-Copy `.env.example` to `.env` and fill in your email credentials and any other necessary configurations.
-
-4. **Run the application:**
-Execute the main script to start the job checking process:
-```
-
-python src/main.py
-
-```
-
-## Usage
-
-The script will automatically check the specified NBA team career links at regular intervals. If it finds job listings that match the specified keywords, it will send an email with the details.
-
-## Contribution Guidelines
-
-Contributions are welcome! Please fork the repository and submit a pull request with your changes. Make sure to include tests for any new features or bug fixes.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
-```
+**Happy job hunting! 🏀**

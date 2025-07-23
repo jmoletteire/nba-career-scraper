@@ -10,9 +10,9 @@ import json
 from datetime import datetime
 
 # Add src directory to path
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
-from scraper import JobScraper
+from src.scraper import JobScraper
 
 def load_keywords():
     """Load keywords from JSON file"""

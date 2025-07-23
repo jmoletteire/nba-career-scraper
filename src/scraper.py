@@ -5,10 +5,17 @@ import logging
 import re
 from urllib.parse import urljoin, urlparse
 import json
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 class JobScraper:
-    def __init__(self, keywords=None):
+    def __init__(self, keywords=None, use_selenium=True):
         self.keywords = keywords or []
+        self.use_selenium = use_selenium
         self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
@@ -19,9 +26,97 @@ class JobScraper:
         logging.basicConfig(level=logging.INFO)
         self.logger = logging.getLogger(__name__)
         
+        # Initialize Selenium driver if needed
+        self.driver = None
+        if self.use_selenium:
+            self._setup_selenium()
+    
+    def _setup_selenium(self):
+        """Setup Selenium WebDriver with Chrome options"""
+        try:
+            chrome_options = Options()
+            chrome_options.add_argument('--headless')  # Run in background
+            chrome_options.add_argument('--no-sandbox')
+            chrome_options.add_argument('--disable-dev-shm-usage')
+            chrome_options.add_argument('--disable-gpu')
+            chrome_options.add_argument('--window-size=1920,1080')
+            chrome_options.add_argument('--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36')
+            
+            self.driver = webdriver.Chrome(options=chrome_options)
+            self.driver.implicitly_wait(10)
+            self.logger.info("Selenium WebDriver initialized successfully")
+        except Exception as e:
+            self.logger.error(f"Failed to initialize Selenium: {e}")
+            self.use_selenium = False
+            self.driver = None
+    
+    def __del__(self):
+        """Cleanup Selenium driver when object is destroyed"""
+        if self.driver:
+            try:
+                self.driver.quit()
+            except:
+                pass
+        
     def _fetch_jobs_from_team_page(self, team_name, url):
         """
-        Fetch job listings from a specific team's career page
+        Fetch job listings from a specific team's career page using Selenium or requests
+        """
+        jobs = []
+        
+        # Determine which method to use based on the URL
+        if self._should_use_selenium(url):
+            jobs = self._fetch_jobs_with_selenium(team_name, url)
+        else:
+            jobs = self._fetch_jobs_with_requests(team_name, url)
+            
+        return jobs
+    
+    def _should_use_selenium(self, url):
+        """
+        Determine if we should use Selenium - always use it if available
+        """
+        # Always use Selenium if available for consistent results across all sites
+        return self.use_selenium and self.driver is not None
+    
+    def _fetch_jobs_with_selenium(self, team_name, url):
+        """
+        Fetch jobs using Selenium for JavaScript-heavy sites
+        """
+        jobs = []
+        
+        if not self.driver:
+            self.logger.warning(f"Selenium not available for {team_name}, falling back to requests")
+            return self._fetch_jobs_with_requests(team_name, url)
+        
+        try:
+            self.logger.info(f"Using Selenium to load {url}")
+            self.driver.get(url)
+            
+            # Reduced wait time for faster processing
+            WebDriverWait(self.driver, 5).until(
+                EC.presence_of_element_located((By.TAG_NAME, "body"))
+            )
+            
+            # Shorter wait for dynamic content
+            time.sleep(2)
+            
+            # Try to find job elements using Selenium
+            job_elements = self._find_job_elements_selenium()
+            
+            for job_element in job_elements:
+                job_data = self._parse_job_element_selenium(job_element, team_name, url)
+                if job_data:
+                    jobs.append(job_data)
+                    
+        except Exception as e:
+            self.logger.error(f"Error fetching jobs with Selenium from {url}: {e}")
+            
+        return jobs
+    
+    def _fetch_jobs_with_requests(self, team_name, url):
+        """
+        Fetch jobs using requests + BeautifulSoup for static sites
         """
         jobs = []
         
@@ -38,16 +133,104 @@ class JobScraper:
                 job_data = self._parse_job_element(job_element, team_name, url)
                 if job_data:
                     jobs.append(job_data)
-            
-            # Handle pagination if present
-            next_page_url = self._find_next_page(soup, url)
-            if next_page_url:
-                jobs.extend(self._fetch_jobs_from_team_page(team_name, next_page_url))
-                
+                    
         except Exception as e:
-            self.logger.error(f"Error fetching jobs from {url}: {e}")
+            self.logger.error(f"Error fetching jobs with requests from {url}: {e}")
             
         return jobs
+
+    def _find_job_elements_selenium(self):
+        """
+        Find job elements using Selenium - optimized for speed
+        """
+        job_elements = []
+        
+        # Prioritized selectors - most effective first, stop when we find jobs
+        priority_selectors = [
+            # Platform-specific high-yield selectors
+            'a[data-automation-id="jobTitle"]',  # Workday
+            'a[data-automation="job-title"]',    # UltiPro
+            'a[href*="OpportunityDetail"]',      # UltiPro links
+            '.opportunity-link',                 # UltiPro class
+            'a[href*="jobs/"]',                  # ICIMS and others
+            '.list-group-item a',                # TeamWork Online
+            'a[href*="/jobs/"]',                 # SmartRecruiters
+            '.job-link',                         # Generic job links
+            'a[href*="jobdetails"]',             # ADP
+            'a[href*="JobDetail"]',              # Dayforce/Paycor
+        ]
+        
+        # Try priority selectors first and stop when we find a good amount
+        for selector in priority_selectors:
+            try:
+                elements = self.driver.find_elements(By.CSS_SELECTOR, selector)
+                if elements:
+                    self.logger.info(f"Found {len(elements)} job elements using selector: {selector}")
+                    job_elements.extend(elements)
+                    
+                    # If we found a decent number of jobs, stop searching
+                    if len(job_elements) >= 10:
+                        break
+                        
+            except Exception as e:
+                self.logger.debug(f"Selenium selector {selector} failed: {e}")
+                continue
+        
+        # If we didn't find many jobs, try generic fallbacks
+        if len(job_elements) < 5:
+            fallback_selectors = ['a[href*="job"]', 'a[href*="career"]']
+            for selector in fallback_selectors:
+                try:
+                    elements = self.driver.find_elements(By.CSS_SELECTOR, selector)
+                    if elements:
+                        job_elements.extend(elements)
+                        break  # Stop after first successful fallback
+                except Exception:
+                    continue
+        
+        # Quick deduplication
+        seen_hrefs = set()
+        unique_elements = []
+        for element in job_elements:
+            try:
+                href = element.get_attribute('href') or ''
+                if href and href not in seen_hrefs:
+                    seen_hrefs.add(href)
+                    unique_elements.append(element)
+            except Exception:
+                continue
+        
+        self.logger.info(f"Found {len(unique_elements)} unique job elements with Selenium")
+        return unique_elements
+
+    def _parse_job_element_selenium(self, element, team_name, base_url):
+        """
+        Parse job element using Selenium WebElement
+        """
+        try:
+            # Get title
+            title = element.text.strip() if element.text else "Unknown Position"
+            
+            # Get URL
+            job_url = element.get_attribute('href') or base_url
+            
+            # Clean up title
+            title = self._clean_title(title)
+            
+            # Validate job title
+            if not self._is_valid_job_title(title):
+                return None
+            
+            return {
+                'title': title,
+                'team': team_name,
+                'url': job_url,
+                'scraped_at': time.strftime('%Y-%m-%d %H:%M:%S')
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Error parsing Selenium job element: {e}")
+            return None
 
     def _find_job_elements(self, soup):
         """
@@ -58,70 +241,38 @@ class JobScraper:
         
         # Comprehensive selectors for different platforms
         selectors = [
-            # Workday sites (myworkdaysite.com)
-            'a[data-automation-id="jobTitle"]',  # Primary Workday job titles
-            'a[href*="/job/"]',  # Workday job URLs
+            # Workday sites (Atlanta)
+            'a[data-automation-id="jobTitle"]',
             
-            # UltiPro sites (recruiting.ultipro.com)
-            'a[href*="JobDetails"]',  # UltiPro job detail links
-            '.job-link',  # UltiPro job links
-            '.job-title a',  # UltiPro job titles
-            '.posting-headline a',  # UltiPro posting headlines
+            # UltiPro sites (Charlotte, Miami, Orlando, Phoenix)
+            'a[data-automation="job-title"]',
             
-            # TeamWork Online
-            '.list-group-item a',  # TeamWork job list items
-            '.job-title-link',  # TeamWork job title links
-            'a[href*="/job/"]',  # TeamWork job URLs
+            # TeamWork Online (Cleveland, GS, LAL, Sacramento, Utah, Washington)
+            'a[href*="/basketball-jobs/"]',
             
             # ADP Workforce Now
             'a[href*="jobdetails"]',  # ADP job detail links
             '.job-result-item a',  # ADP job results
             
-            # Dayforce HCM
-            'a[href*="JobDetail"]',  # Dayforce job details
-            '.job-item a',  # Dayforce job items
-            
-            # ICIMS (careers-grizzlies.icims.com)
-            'a[href*="jobs/"]',  # ICIMS job URLs
-            '.iCIMS_JobsTable a',  # ICIMS job table
-            
             # SmartRecruiters (careers.smartrecruiters.com)
-            'a[href*="/jobs/"]',  # SmartRecruiters job URLs
             '.job-link',  # SmartRecruiters job links
             
-            # Paylocity
-            'a[href*="recruiting/jobs"]',  # Paylocity job URLs
+            # Paylocity (Detroit)
+            'a[href*="Recruiting/Jobs"]',
             
-            # Paycor
-            'a[href*="JobDetail"]',  # Paycor job details
+            # Paycor (Chicago, Dallas, Denver, Houston)
+            'a[href*="JobIntroduction"]',  # Paycor job details
             
-            # HireBridge
-            'a[href*="JobDetails"]',  # HireBridge job details
+            # HireBridge (Philly)
+            'a[href*="jobloc"]',
             
-            # Custom NBA sites and general patterns
-            'a[href*="job"]',  # Generic job URLs
-            'a[href*="career"]',  # Generic career URLs
-            'a[href*="position"]',  # Generic position URLs
-            'a[href*="opening"]',  # Generic opening URLs
-            
-            # Title-based selectors
-            'a[title*="job" i]',  # Job in title
-            'a[title*="position" i]',  # Position in title
-            'a[title*="career" i]',  # Career in title
-            'a[title*="opening" i]',  # Opening in title
-            
-            # Class-based selectors
-            '.job a',  # Job class links
-            '.position a',  # Position class links
-            '.career a',  # Career class links
-            '.opening a',  # Opening class links
-            '.job-listing a',  # Job listing links
-            '.job-item a',  # Job item links
-            '.career-opportunity a',  # Career opportunity links
-            
-            # Fallback selectors for unusual layouts
-            'a[aria-label*="job" i]',  # ARIA label with job
-            'a[aria-label*="position" i]',  # ARIA label with position
+            # Generic job URLs
+            'a[href*="/jobs/"]',  # Memphis, Minnesota, NOLA, New York, Portland, San Antonio
+            'a[href*="linkedin"]',  # Boston
+            'a[href*="job-opening"]',  # Indiana
+            'a[href*="/clippers/company/careers/"]',  # LAC
+            'a[href*="/thunder/employment/"]',  # OKC
+            'a[href*="/MLSE3/"]',  # Toronto
         ]
         
         # Try each selector and collect results
@@ -402,8 +553,8 @@ class JobScraper:
                 else:
                     self.logger.info(f"No jobs found for {team_name}")
                 
-                # Small delay between requests to be respectful
-                time.sleep(2)
+                # Shorter delay between requests for faster processing
+                time.sleep(1)
                 
             except Exception as e:
                 self.logger.error(f"Error scraping {team_name}: {e}")

@@ -4,7 +4,6 @@ An automated tool that monitors all NBA team career pages for job opportunities 
 
 ## 🏀 Features
 
-- **Automated Discovery**: Discovers all NBA team career page URLs from the main NBA careers site
 - **Smart Scraping**: Handles different website structures and pagination across team sites
 - **Keyword Filtering**: Filters jobs based on customizable keywords/phrases
 - **Email Notifications**: Sends formatted email reports with job details and application links

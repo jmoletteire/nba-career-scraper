@@ -1,3 +1,5 @@
+from concurrent.futures import ThreadPoolExecutor
+import concurrent.futures
 import requests
 from bs4 import BeautifulSoup
 import time

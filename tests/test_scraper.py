@@ -46,7 +46,7 @@ def main():
     print("\nStarting job scraping across all NBA teams...")
     print("This may take a few minutes...")
     
-    all_jobs = scraper.scrape_all_teams_parallel()
+    all_jobs = scraper.scrape_all_teams()
     
     # Display results
     print("\n" + "=" * 60)

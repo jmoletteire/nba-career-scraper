@@ -141,8 +141,8 @@ class JobScraper:
             if title_lower.startswith(prefix + ' '):
                 return False
         
-        # Check if it contains any keywords
-        return any(indicator in title_lower for indicator in self.keywords)
+        # Check if it contains any keywords and not any exclude terms
+        return any(indicator in title_lower for indicator in self.keywords) and not any(indicator in title_lower for indicator in self.exclude)
     
     def _parse_job_element(self, element, team_name, base_url):
         """
@@ -335,7 +335,7 @@ class JobScraper:
             # HireBridge (Philly)
             'Philadelphia 76ers': 'a[href*="jobloc"]',
 
-            # Generic job URLs
+            # Misc. job URLs
             'Memphis Grizzlies': 'a[href*="/jobs/"]',
             'Minnesota Timberwolves': 'a[href*="/jobs/"]',
             'New Orleans Pelicans': 'a[href*="/jobs/"]',
@@ -349,7 +349,6 @@ class JobScraper:
             'Toronto Raptors': 'a[href*="/MLSE3/"]',
         }
         
-        # Try priority selectors first and stop when we find a good amount
         try:
             # Search page once with combined selector
             self.logger.info("Searching...")

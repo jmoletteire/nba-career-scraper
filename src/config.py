@@ -27,7 +27,7 @@ class Config:
         try:
             with open(filename, 'r') as f:
                 data = json.load(f)
-                return data.get('keywords', [])
+                return data
         except Exception as e:
             print(f"Error loading keywords: {e}")
             return []
@@ -40,3 +40,4 @@ class Config:
         except Exception as e:
             print(f"Error loading team URLs: {e}")
             return {}
+        

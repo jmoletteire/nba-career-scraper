@@ -6,23 +6,13 @@ This runs without requiring email configuration.
 
 import sys
 import os
-import json
 from datetime import datetime
 
 # Add src directory to path
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from src.scraper import JobScraper
-
-def load_keywords():
-    """Load keywords from JSON file"""
-    try:
-        with open('data/keywords.json', 'r') as f:
-            data = json.load(f)
-            return data.get('keywords', [])
-    except Exception as e:
-        print(f"Error loading keywords: {e}")
-        return ['analyst', 'coordinator', 'manager', 'intern', 'assistant', 'director']
+from src.config import Config
 
 def main():
     print("=" * 60)
@@ -31,13 +21,17 @@ def main():
     print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     
     # Load keywords
-    keywords = load_keywords()
+    config = Config()
+    kw_data = config.load_keywords()
+    keywords = kw_data.get('keywords', [])
+    exclude = kw_data.get('exclude', [])
     print(f"Keywords: {', '.join(keywords)}")
-    
+    print(f"Excluded keywords: {', '.join(exclude)}")
+
     # Initialize scraper
     print("\nInitializing scraper...")
-    scraper = JobScraper(keywords=keywords)
-    
+    scraper = JobScraper(keywords=keywords, exclude=exclude)
+
     # Test loading team URLs
     scraper.load_team_urls()
     print(f"Loaded {len(scraper.team_urls)} team URLs")
@@ -62,18 +56,13 @@ def main():
         for team_name, jobs in sorted(all_jobs.items()):
             print(f"  {team_name}: {len(jobs)} jobs")
         
-        # Show sample jobs
-        print("\nSample job listings:")
-        sample_count = 0
+        # Show job listings
+        print("\nJob listings:")
         for team_name, jobs in all_jobs.items():
-            for job in jobs[:2]:  # Max 2 per team
-                if sample_count < 10:  # Max 10 total
-                    print(f"  • {team_name}: {job['title']}")
-                    sample_count += 1
-                if sample_count >= 10:
-                    break
-            if sample_count >= 10:
-                break
+            for job in jobs:  # Jobs for each team
+                print(f"  • {team_name}: {job['title']}")
+                print(f"    {job['url']}")
+            print()  # Newline between teams for readability
         
         # Keyword analysis
         print("\nKeyword matches:")

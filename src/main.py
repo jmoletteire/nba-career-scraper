@@ -1,19 +1,8 @@
 import time
-import json
 import logging
 from scraper import JobScraper
 from email_sender import EmailSender
 from config import Config
-
-def load_keywords(filename='data/keywords.json'):
-    """Load keywords from JSON file"""
-    try:
-        with open(filename, 'r') as f:
-            data = json.load(f)
-            return data.get('keywords', [])
-    except Exception as e:
-        logging.error(f"Error loading keywords: {e}")
-        return []
 
 def main():
     # Set up logging
@@ -32,10 +21,12 @@ def main():
     try:
         # Load configuration
         config = Config()
-        keywords = load_keywords()
+        kw_data = config.load_keywords()
+        keywords = kw_data.get('keywords', [])
+        exclude = kw_data.get('exclude', [])
         
         # Initialize scraper
-        job_scraper = JobScraper(keywords=keywords)
+        job_scraper = JobScraper(keywords=keywords, exclude=exclude)
         
         # Initialize email sender
         email_sender = EmailSender(config)

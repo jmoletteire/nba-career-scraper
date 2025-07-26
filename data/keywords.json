@@ -1,6 +1,8 @@
 {
   "keywords": [
     "analytics",
+    "analyst",
+    "science",
     "data",
     "basketball",
     "strategy",
@@ -8,6 +10,31 @@
     "engineer",
     "developer",
     "full stack",
-    "front end"
+    "full-stack",
+    "front end",
+    "front-end"
+  ],
+  "exclude": [
+    "senior",
+    "manager",
+    "director",
+    "vp",
+    "vice president",
+    "chief",
+    "c-level",
+    "corporate",
+    "finance",
+    "financial",
+    "accounting",
+    "accountant",
+    "consultant",
+    "consulting",
+    "sales",
+    "marketing",
+    "human resources",
+    "hr",
+    "recruiter",
+    "recruiting",
+    "recruitment"
   ]
 }

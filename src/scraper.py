@@ -1,5 +1,3 @@
-from concurrent.futures import ThreadPoolExecutor
-import concurrent.futures
 import requests
 from bs4 import BeautifulSoup
 import time
@@ -303,9 +301,8 @@ class JobScraper:
         """
         job_elements = []
         
-        # Prioritized selectors - most effective first, stop when we find jobs
-        priority_selectors = {
-            # Platform-specific high-yield selectors
+        selectors = {
+            # Platform-specific job element selectors
             # Workday sites (Atlanta)
             'Atlanta Hawks': 'a[data-automation-id="jobTitle"]',
             
@@ -352,7 +349,7 @@ class JobScraper:
         try:
             # Search page once with combined selector
             self.logger.info("Searching...")
-            elements = self.driver.find_elements(By.CSS_SELECTOR, priority_selectors.get(team_name, 'a[href*="job"]'))
+            elements = self.driver.find_elements(By.CSS_SELECTOR, selectors.get(team_name, 'a[href*="job"]'))
             
             if elements:
                 self.logger.info(f"Found {len(elements)} job elements")
@@ -399,11 +396,9 @@ class JobScraper:
             return self._fetch_jobs_with_requests(team_name, url)
         
         try:
-            self.logger.info(f"Using Selenium to load {url}")
             self.driver.get(url)
-            
-            # Remove the explicit wait - we already have implicit wait set
-            # Reduce fixed sleep time from 2 seconds to 0.5 seconds
+
+            # Wait for page to load
             time.sleep(0.5)
             
             # Try to find job elements using Selenium

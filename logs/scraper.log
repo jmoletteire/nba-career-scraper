@@ -854,3 +854,585 @@
 2025-07-23 20:56:36,910 - INFO - Found 9 total matching job listings across 6 teams
 2025-07-23 20:56:37,770 - ERROR - Failed to send email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-537bf48befcsm160391e0c.0 - gsmtp')
 2025-07-23 20:56:37,770 - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-537bf48befcsm160391e0c.0 - gsmtp')
+2025-07-29 15:27:59,689 - INFO - Starting NBA Career Scraper
+2025-07-29 15:28:01,240 - INFO - Selenium WebDriver initialized with speed optimizations
+2025-07-29 15:28:01,240 - INFO - Starting job scraping from curated team URLs...
+2025-07-29 15:28:01,240 - INFO - Loaded 30 team URLs from data/team_urls.json
+2025-07-29 15:28:01,240 - INFO - Starting to scrape 30 team career pages...
+2025-07-29 15:28:01,240 - INFO - 
+--- Scraping Atlanta Hawks ---
+2025-07-29 15:28:01,240 - INFO - URL: https://wd1.myworkdaysite.com/en-US/recruiting/hawks/External
+2025-07-29 15:28:01,240 - INFO - Using Selenium to load https://wd1.myworkdaysite.com/en-US/recruiting/hawks/External
+2025-07-29 15:28:02,841 - INFO - Searching...
+2025-07-29 15:28:03,351 - INFO - Found 20 job elements
+2025-07-29 15:28:03,511 - INFO - Found 1 matching jobs for Atlanta Hawks
+2025-07-29 15:28:03,511 - INFO - 
+--- Scraping Boston Celtics ---
+2025-07-29 15:28:03,511 - INFO - URL: https://www.nba.com/celtics/careers
+2025-07-29 15:28:03,511 - INFO - Using Selenium to load https://www.nba.com/celtics/careers
+2025-07-29 15:28:05,378 - INFO - Searching...
+2025-07-29 15:28:05,427 - INFO - Found 2 job elements
+2025-07-29 15:28:05,460 - INFO - No matching jobs found for Boston Celtics
+2025-07-29 15:28:05,460 - INFO - 
+--- Scraping Brooklyn Nets ---
+2025-07-29 15:28:05,460 - INFO - URL: https://www.bseglobal.net/careers/
+2025-07-29 15:28:05,460 - INFO - Using Selenium to load https://www.bseglobal.net/careers/
+2025-07-29 15:28:07,263 - INFO - Searching...
+2025-07-29 15:28:12,299 - INFO - No matching jobs found for Brooklyn Nets
+2025-07-29 15:28:12,299 - INFO - 
+--- Scraping Charlotte Hornets ---
+2025-07-29 15:28:12,299 - INFO - URL: https://recruiting.ultipro.com/HOR1011HORNT/JobBoard/5b257d2d-0813-4167-b64c-95fb001e0d96/?q=&o=postedDateDesc
+2025-07-29 15:28:12,299 - INFO - Using Selenium to load https://recruiting.ultipro.com/HOR1011HORNT/JobBoard/5b257d2d-0813-4167-b64c-95fb001e0d96/?q=&o=postedDateDesc
+2025-07-29 15:28:14,386 - INFO - Searching...
+2025-07-29 15:28:14,406 - INFO - Found 26 job elements
+2025-07-29 15:28:14,629 - INFO - Found 1 matching jobs for Charlotte Hornets
+2025-07-29 15:28:14,630 - INFO - 
+--- Scraping Chicago Bulls ---
+2025-07-29 15:28:14,630 - INFO - URL: https://www.nba.com/bulls/career-opportunities
+2025-07-29 15:28:14,630 - INFO - Using Selenium to load https://www.nba.com/bulls/career-opportunities
+2025-07-29 15:28:15,546 - INFO - Searching...
+2025-07-29 15:28:20,558 - INFO - No matching jobs found for Chicago Bulls
+2025-07-29 15:28:20,558 - INFO - 
+--- Scraping Cleveland Cavaliers ---
+2025-07-29 15:28:20,558 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/cleveland-cavaliers/cleveland-cavaliers-jobs
+2025-07-29 15:28:20,558 - INFO - Using Selenium to load https://www.teamworkonline.com/basketball-jobs/cleveland-cavaliers/cleveland-cavaliers-jobs
+2025-07-29 15:28:22,138 - INFO - Searching...
+2025-07-29 15:28:22,148 - INFO - Found 34 job elements
+2025-07-29 15:28:22,321 - INFO - No matching jobs found for Cleveland Cavaliers
+2025-07-29 15:28:22,321 - INFO - 
+--- Scraping Dallas Mavericks ---
+2025-07-29 15:28:22,321 - INFO - URL: https://recruitingbypaycor.com/career/CareerHome.action?clientId=8a7883c68eee9454018ef2f81a7d05a4
+2025-07-29 15:28:22,321 - INFO - Using Selenium to load https://recruitingbypaycor.com/career/CareerHome.action?clientId=8a7883c68eee9454018ef2f81a7d05a4
+2025-07-29 15:28:23,839 - INFO - Searching...
+2025-07-29 15:28:23,856 - INFO - Found 3 job elements
+2025-07-29 15:28:23,899 - INFO - No matching jobs found for Dallas Mavericks
+2025-07-29 15:28:23,899 - INFO - 
+--- Scraping Denver Nuggets ---
+2025-07-29 15:28:23,899 - INFO - URL: https://www.ballarena.com/careers
+2025-07-29 15:28:23,900 - INFO - Using Selenium to load https://www.ballarena.com/careers
+2025-07-29 15:28:26,529 - INFO - Searching...
+2025-07-29 15:28:31,561 - INFO - No matching jobs found for Denver Nuggets
+2025-07-29 15:28:31,562 - INFO - 
+--- Scraping Detroit Pistons ---
+2025-07-29 15:28:31,562 - INFO - URL: https://recruiting.paylocity.com/recruiting/jobs/All/19408bc7-4e69-4ea7-9ff6-3e39455d6469/Detroit-Pistons
+2025-07-29 15:28:31,562 - INFO - Using Selenium to load https://recruiting.paylocity.com/recruiting/jobs/All/19408bc7-4e69-4ea7-9ff6-3e39455d6469/Detroit-Pistons
+2025-07-29 15:28:33,712 - INFO - Searching...
+2025-07-29 15:28:33,730 - INFO - Found 3 job elements
+2025-07-29 15:28:33,773 - INFO - No matching jobs found for Detroit Pistons
+2025-07-29 15:28:33,773 - INFO - 
+--- Scraping Golden State Warriors ---
+2025-07-29 15:28:33,773 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/warriors/golden-state-warriors-careers
+2025-07-29 15:28:33,773 - INFO - Using Selenium to load https://www.teamworkonline.com/basketball-jobs/warriors/golden-state-warriors-careers
+2025-07-29 15:28:34,658 - INFO - Searching...
+2025-07-29 15:28:34,676 - INFO - Found 26 job elements
+2025-07-29 15:28:34,820 - INFO - No matching jobs found for Golden State Warriors
+2025-07-29 15:28:34,820 - INFO - 
+--- Scraping Houston Rockets ---
+2025-07-29 15:28:34,820 - INFO - URL: https://recruitingbypaycor.com/career/CareerHome.action?clientId=8a7883c689b7fbd50189ffa65b61208d
+2025-07-29 15:28:34,820 - INFO - Using Selenium to load https://recruitingbypaycor.com/career/CareerHome.action?clientId=8a7883c689b7fbd50189ffa65b61208d
+2025-07-29 15:28:35,667 - INFO - Searching...
+2025-07-29 15:28:35,684 - INFO - Found 25 job elements
+2025-07-29 15:28:35,881 - INFO - No matching jobs found for Houston Rockets
+2025-07-29 15:28:35,881 - INFO - 
+--- Scraping Indiana Pacers ---
+2025-07-29 15:28:35,881 - INFO - URL: https://pse.hrmdirect.com/employment/job-openings.php?search=true&
+2025-07-29 15:28:35,881 - INFO - Using Selenium to load https://pse.hrmdirect.com/employment/job-openings.php?search=true&
+2025-07-29 15:28:37,006 - INFO - Searching...
+2025-07-29 15:28:37,023 - INFO - Found 13 job elements
+2025-07-29 15:28:37,138 - INFO - Found 2 matching jobs for Indiana Pacers
+2025-07-29 15:28:37,139 - INFO - 
+--- Scraping Los Angeles Clippers ---
+2025-07-29 15:28:37,139 - INFO - URL: https://www.nba.com/clippers/company/careers/openpositions
+2025-07-29 15:28:37,139 - INFO - Using Selenium to load https://www.nba.com/clippers/company/careers/openpositions
+2025-07-29 15:28:37,984 - INFO - Searching...
+2025-07-29 15:28:44,119 - INFO - No matching jobs found for Los Angeles Clippers
+2025-07-29 15:28:44,119 - INFO - 
+--- Scraping Los Angeles Lakers ---
+2025-07-29 15:28:44,119 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/los-angeles-lakers/los-angeles-lakers-jobs
+2025-07-29 15:28:44,119 - INFO - Using Selenium to load https://www.teamworkonline.com/basketball-jobs/los-angeles-lakers/los-angeles-lakers-jobs
+2025-07-29 15:28:44,862 - INFO - Searching...
+2025-07-29 15:28:44,879 - INFO - Found 12 job elements
+2025-07-29 15:28:44,963 - INFO - No matching jobs found for Los Angeles Lakers
+2025-07-29 15:28:44,963 - INFO - 
+--- Scraping Memphis Grizzlies ---
+2025-07-29 15:28:44,963 - INFO - URL: https://careers-grizzlies.icims.com/jobs/search
+2025-07-29 15:28:44,963 - INFO - Using Selenium to load https://careers-grizzlies.icims.com/jobs/search
+2025-07-29 15:28:47,368 - INFO - Searching...
+2025-07-29 15:28:47,785 - INFO - Found 1 job elements
+2025-07-29 15:28:47,801 - INFO - No matching jobs found for Memphis Grizzlies
+2025-07-29 15:28:47,801 - INFO - 
+--- Scraping Miami Heat ---
+2025-07-29 15:28:47,801 - INFO - URL: https://recruiting.ultipro.com/MIA1004MHLP/JobBoard/b34868a3-6ce1-4a28-b8fb-afb1cd5be9d3/?q=&o=postedDateDesc
+2025-07-29 15:28:47,801 - INFO - Using Selenium to load https://recruiting.ultipro.com/MIA1004MHLP/JobBoard/b34868a3-6ce1-4a28-b8fb-afb1cd5be9d3/?q=&o=postedDateDesc
+2025-07-29 15:28:49,026 - INFO - Searching...
+2025-07-29 15:28:49,045 - INFO - Found 26 job elements
+2025-07-29 15:28:49,267 - INFO - No matching jobs found for Miami Heat
+2025-07-29 15:28:49,267 - INFO - 
+--- Scraping Milwaukee Bucks ---
+2025-07-29 15:28:49,267 - INFO - URL: https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=035c77cb-5b5c-4e48-b858-605ab1663076&ccId=19000101_000001&type=JS&lang=en_US
+2025-07-29 15:28:49,267 - INFO - Using Selenium to load https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=035c77cb-5b5c-4e48-b858-605ab1663076&ccId=19000101_000001&type=JS&lang=en_US
+2025-07-29 15:28:52,527 - INFO - Searching...
+2025-07-29 15:28:57,582 - INFO - No matching jobs found for Milwaukee Bucks
+2025-07-29 15:28:57,582 - INFO - 
+--- Scraping Minnesota Timberwolves ---
+2025-07-29 15:28:57,582 - INFO - URL: https://jobs.dayforcehcm.com/en-US/packportal/CANDIDATEPORTAL
+2025-07-29 15:28:57,582 - INFO - Using Selenium to load https://jobs.dayforcehcm.com/en-US/packportal/CANDIDATEPORTAL
+2025-07-29 15:28:59,145 - INFO - Searching...
+2025-07-29 15:29:00,391 - INFO - Found 8 job elements
+2025-07-29 15:29:00,434 - INFO - Found 2 matching jobs for Minnesota Timberwolves
+2025-07-29 15:29:00,434 - INFO - 
+--- Scraping New Orleans Pelicans ---
+2025-07-29 15:29:00,434 - INFO - URL: http://dayforcehcm.com/CandidatePortal/en-US/bensonenterprises/SITE/SAINTSPELSCAREERS
+2025-07-29 15:29:00,434 - INFO - Using Selenium to load http://dayforcehcm.com/CandidatePortal/en-US/bensonenterprises/SITE/SAINTSPELSCAREERS
+2025-07-29 15:29:02,562 - INFO - Searching...
+2025-07-29 15:29:03,921 - INFO - Found 24 job elements
+2025-07-29 15:29:04,037 - INFO - No matching jobs found for New Orleans Pelicans
+2025-07-29 15:29:04,037 - INFO - 
+--- Scraping New York Knicks ---
+2025-07-29 15:29:04,037 - INFO - URL: https://www.msgsports.com/jobs/?department=&location=
+2025-07-29 15:29:04,037 - INFO - Using Selenium to load https://www.msgsports.com/jobs/?department=&location=
+2025-07-29 15:29:06,553 - INFO - Searching...
+2025-07-29 15:29:06,569 - INFO - Found 10 job elements
+2025-07-29 15:29:06,639 - INFO - No matching jobs found for New York Knicks
+2025-07-29 15:29:06,639 - INFO - 
+--- Scraping Oklahoma City Thunder ---
+2025-07-29 15:29:06,639 - INFO - URL: https://www.nba.com/thunder/employment
+2025-07-29 15:29:06,639 - INFO - Using Selenium to load https://www.nba.com/thunder/employment
+2025-07-29 15:29:07,902 - INFO - Searching...
+2025-07-29 15:29:07,913 - INFO - Found 8 job elements
+2025-07-29 15:29:07,987 - INFO - No matching jobs found for Oklahoma City Thunder
+2025-07-29 15:29:07,987 - INFO - 
+--- Scraping Orlando Magic ---
+2025-07-29 15:29:07,987 - INFO - URL: https://recruiting.ultipro.com/ORL1001MAGIC/JobBoard/d2d331e7-e222-4a47-bb35-c640aa29a3d7/?q=&o=postedDateDesc
+2025-07-29 15:29:07,987 - INFO - Using Selenium to load https://recruiting.ultipro.com/ORL1001MAGIC/JobBoard/d2d331e7-e222-4a47-bb35-c640aa29a3d7/?q=&o=postedDateDesc
+2025-07-29 15:29:09,138 - INFO - Searching...
+2025-07-29 15:29:09,155 - INFO - Found 14 job elements
+2025-07-29 15:29:09,294 - INFO - No matching jobs found for Orlando Magic
+2025-07-29 15:29:09,294 - INFO - 
+--- Scraping Philadelphia 76ers ---
+2025-07-29 15:29:09,294 - INFO - URL: https://recruit.hirebridge.com/v3/CareerCenter/v2/?cid=8097
+2025-07-29 15:29:09,294 - INFO - Using Selenium to load https://recruit.hirebridge.com/v3/CareerCenter/v2/?cid=8097
+2025-07-29 15:29:11,582 - INFO - Searching...
+2025-07-29 15:29:16,623 - INFO - No matching jobs found for Philadelphia 76ers
+2025-07-29 15:29:16,624 - INFO - 
+--- Scraping Phoenix Suns ---
+2025-07-29 15:29:16,624 - INFO - URL: http://recruiting2.ultipro.com/PHO1000PHXSE
+2025-07-29 15:29:16,624 - INFO - Using Selenium to load http://recruiting2.ultipro.com/PHO1000PHXSE
+2025-07-29 15:29:19,406 - INFO - Searching...
+2025-07-29 15:29:19,425 - INFO - Found 8 job elements
+2025-07-29 15:29:19,506 - INFO - Found 1 matching jobs for Phoenix Suns
+2025-07-29 15:29:19,506 - INFO - 
+--- Scraping Portland Trail Blazers ---
+2025-07-29 15:29:19,506 - INFO - URL: https://jobs.ripcity.org/search/jobs?q=
+2025-07-29 15:29:19,506 - INFO - Using Selenium to load https://jobs.ripcity.org/search/jobs?q=
+2025-07-29 15:29:20,502 - INFO - Searching...
+2025-07-29 15:29:25,530 - INFO - No matching jobs found for Portland Trail Blazers
+2025-07-29 15:29:25,530 - INFO - 
+--- Scraping Sacramento Kings ---
+2025-07-29 15:29:25,530 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/sacramento-kings-jobs/sacramento-kings
+2025-07-29 15:29:25,530 - INFO - Using Selenium to load https://www.teamworkonline.com/basketball-jobs/sacramento-kings-jobs/sacramento-kings
+2025-07-29 15:29:26,595 - INFO - Searching...
+2025-07-29 15:29:26,611 - INFO - Found 16 job elements
+2025-07-29 15:29:26,704 - INFO - Found 1 matching jobs for Sacramento Kings
+2025-07-29 15:29:26,704 - INFO - 
+--- Scraping San Antonio Spurs ---
+2025-07-29 15:29:26,704 - INFO - URL: https://jobs.dayforcehcm.com/en-US/onesse/CANDIDATEPORTAL
+2025-07-29 15:29:26,704 - INFO - Using Selenium to load https://jobs.dayforcehcm.com/en-US/onesse/CANDIDATEPORTAL
+2025-07-29 15:29:27,837 - INFO - Searching...
+2025-07-29 15:29:28,865 - INFO - Found 44 job elements
+2025-07-29 15:29:29,081 - INFO - No matching jobs found for San Antonio Spurs
+2025-07-29 15:29:29,081 - INFO - 
+--- Scraping Toronto Raptors ---
+2025-07-29 15:29:29,081 - INFO - URL: https://careers.smartrecruiters.com/MLSE3
+2025-07-29 15:29:29,081 - INFO - Using Selenium to load https://careers.smartrecruiters.com/MLSE3
+2025-07-29 15:29:30,750 - INFO - Searching...
+2025-07-29 15:29:30,769 - INFO - Found 25 job elements
+2025-07-29 15:29:30,991 - INFO - Found 1 matching jobs for Toronto Raptors
+2025-07-29 15:29:30,991 - INFO - 
+--- Scraping Utah Jazz ---
+2025-07-29 15:29:30,991 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/utah-jazz-jobs/utah-jazz
+2025-07-29 15:29:30,991 - INFO - Using Selenium to load https://www.teamworkonline.com/basketball-jobs/utah-jazz-jobs/utah-jazz
+2025-07-29 15:29:31,741 - INFO - Searching...
+2025-07-29 15:29:31,749 - INFO - Found 30 job elements
+2025-07-29 15:29:31,905 - INFO - No matching jobs found for Utah Jazz
+2025-07-29 15:29:31,905 - INFO - 
+--- Scraping Washington Wizards ---
+2025-07-29 15:29:31,905 - INFO - URL: https://www.teamworkonline.com/multiple-properties/monumentalsports/monumental-sports
+2025-07-29 15:29:31,905 - INFO - Using Selenium to load https://www.teamworkonline.com/multiple-properties/monumentalsports/monumental-sports
+2025-07-29 15:29:32,713 - INFO - Searching...
+2025-07-29 15:29:37,771 - INFO - No matching jobs found for Washington Wizards
+2025-07-29 15:29:37,771 - INFO - 
+=== Scraping Complete ===
+2025-07-29 15:29:37,771 - INFO - Total teams with jobs: 7
+2025-07-29 15:29:37,772 - INFO - Total jobs found: 9
+2025-07-29 15:29:37,772 - INFO - Found 9 total matching job listings across 7 teams
+2025-07-29 15:29:40,476 - ERROR - Failed to send email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-538e3410a88sm2240968e0c.16 - gsmtp')
+2025-07-29 15:29:40,477 - ERROR - Error sending email: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-538e3410a88sm2240968e0c.16 - gsmtp')
+2025-07-29 15:32:25,980 - INFO - Starting NBA Career Scraper
+2025-07-29 15:32:26,905 - INFO - Selenium WebDriver initialized with speed optimizations
+2025-07-29 15:32:26,905 - INFO - Starting job scraping from curated team URLs...
+2025-07-29 15:32:26,905 - INFO - Loaded 30 team URLs from data/team_urls.json
+2025-07-29 15:32:26,905 - INFO - Starting to scrape 30 team career pages...
+2025-07-29 15:32:26,905 - INFO - 
+--- Scraping Atlanta Hawks ---
+2025-07-29 15:32:26,905 - INFO - URL: https://wd1.myworkdaysite.com/en-US/recruiting/hawks/External
+2025-07-29 15:32:28,473 - INFO - Searching...
+2025-07-29 15:32:28,898 - INFO - Found 20 job elements
+2025-07-29 15:32:29,057 - INFO - Found 1 matching jobs for Atlanta Hawks
+2025-07-29 15:32:29,057 - INFO - 
+--- Scraping Boston Celtics ---
+2025-07-29 15:32:29,057 - INFO - URL: https://www.nba.com/celtics/careers
+2025-07-29 15:32:31,357 - INFO - Searching...
+2025-07-29 15:32:31,364 - INFO - Found 2 job elements
+2025-07-29 15:32:31,387 - INFO - No matching jobs found for Boston Celtics
+2025-07-29 15:32:31,387 - INFO - 
+--- Scraping Brooklyn Nets ---
+2025-07-29 15:32:31,387 - INFO - URL: https://www.bseglobal.net/careers/
+2025-07-29 15:32:33,165 - INFO - Searching...
+2025-07-29 15:32:38,206 - INFO - No matching jobs found for Brooklyn Nets
+2025-07-29 15:32:38,207 - INFO - 
+--- Scraping Charlotte Hornets ---
+2025-07-29 15:32:38,207 - INFO - URL: https://recruiting.ultipro.com/HOR1011HORNT/JobBoard/5b257d2d-0813-4167-b64c-95fb001e0d96/?q=&o=postedDateDesc
+2025-07-29 15:32:40,703 - INFO - Searching...
+2025-07-29 15:32:40,718 - INFO - Found 26 job elements
+2025-07-29 15:32:40,931 - INFO - Found 1 matching jobs for Charlotte Hornets
+2025-07-29 15:32:40,931 - INFO - 
+--- Scraping Chicago Bulls ---
+2025-07-29 15:32:40,931 - INFO - URL: https://www.nba.com/bulls/career-opportunities
+2025-07-29 15:32:41,840 - INFO - Searching...
+2025-07-29 15:32:46,894 - INFO - No matching jobs found for Chicago Bulls
+2025-07-29 15:32:46,895 - INFO - 
+--- Scraping Cleveland Cavaliers ---
+2025-07-29 15:32:46,895 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/cleveland-cavaliers/cleveland-cavaliers-jobs
+2025-07-29 15:32:48,381 - INFO - Searching...
+2025-07-29 15:32:48,389 - INFO - Found 34 job elements
+2025-07-29 15:32:48,553 - INFO - No matching jobs found for Cleveland Cavaliers
+2025-07-29 15:32:48,553 - INFO - 
+--- Scraping Dallas Mavericks ---
+2025-07-29 15:32:48,553 - INFO - URL: https://recruitingbypaycor.com/career/CareerHome.action?clientId=8a7883c68eee9454018ef2f81a7d05a4
+2025-07-29 15:32:50,044 - INFO - Searching...
+2025-07-29 15:32:50,058 - INFO - Found 3 job elements
+2025-07-29 15:32:50,099 - INFO - No matching jobs found for Dallas Mavericks
+2025-07-29 15:32:50,099 - INFO - 
+--- Scraping Denver Nuggets ---
+2025-07-29 15:32:50,099 - INFO - URL: https://www.ballarena.com/careers
+2025-07-29 15:32:52,933 - INFO - Searching...
+2025-07-29 15:32:57,939 - INFO - No matching jobs found for Denver Nuggets
+2025-07-29 15:32:57,940 - INFO - 
+--- Scraping Detroit Pistons ---
+2025-07-29 15:32:57,940 - INFO - URL: https://recruiting.paylocity.com/recruiting/jobs/All/19408bc7-4e69-4ea7-9ff6-3e39455d6469/Detroit-Pistons
+2025-07-29 15:32:59,023 - INFO - Searching...
+2025-07-29 15:32:59,394 - INFO - Found 3 job elements
+2025-07-29 15:32:59,426 - INFO - No matching jobs found for Detroit Pistons
+2025-07-29 15:32:59,426 - INFO - 
+--- Scraping Golden State Warriors ---
+2025-07-29 15:32:59,426 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/warriors/golden-state-warriors-careers
+2025-07-29 15:33:00,426 - INFO - Searching...
+2025-07-29 15:33:00,449 - INFO - Found 26 job elements
+2025-07-29 15:33:00,586 - INFO - No matching jobs found for Golden State Warriors
+2025-07-29 15:33:00,586 - INFO - 
+--- Scraping Houston Rockets ---
+2025-07-29 15:33:00,586 - INFO - URL: https://recruitingbypaycor.com/career/CareerHome.action?clientId=8a7883c689b7fbd50189ffa65b61208d
+2025-07-29 15:33:01,437 - INFO - Searching...
+2025-07-29 15:33:01,454 - INFO - Found 25 job elements
+2025-07-29 15:33:01,660 - INFO - No matching jobs found for Houston Rockets
+2025-07-29 15:33:01,660 - INFO - 
+--- Scraping Indiana Pacers ---
+2025-07-29 15:33:01,660 - INFO - URL: https://pse.hrmdirect.com/employment/job-openings.php?search=true&
+2025-07-29 15:33:02,837 - INFO - Searching...
+2025-07-29 15:33:02,855 - INFO - Found 13 job elements
+2025-07-29 15:33:02,973 - INFO - Found 2 matching jobs for Indiana Pacers
+2025-07-29 15:33:02,973 - INFO - 
+--- Scraping Los Angeles Clippers ---
+2025-07-29 15:33:02,973 - INFO - URL: https://www.nba.com/clippers/company/careers/openpositions
+2025-07-29 15:33:05,946 - INFO - Searching...
+2025-07-29 15:33:10,951 - INFO - No matching jobs found for Los Angeles Clippers
+2025-07-29 15:33:10,951 - INFO - 
+--- Scraping Los Angeles Lakers ---
+2025-07-29 15:33:10,951 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/los-angeles-lakers/los-angeles-lakers-jobs
+2025-07-29 15:33:11,591 - INFO - Searching...
+2025-07-29 15:33:11,603 - INFO - Found 12 job elements
+2025-07-29 15:33:11,674 - INFO - No matching jobs found for Los Angeles Lakers
+2025-07-29 15:33:11,674 - INFO - 
+--- Scraping Memphis Grizzlies ---
+2025-07-29 15:33:11,674 - INFO - URL: https://careers-grizzlies.icims.com/jobs/search
+2025-07-29 15:33:16,675 - INFO - Searching...
+2025-07-29 15:33:17,371 - INFO - Found 1 job elements
+2025-07-29 15:33:17,388 - INFO - No matching jobs found for Memphis Grizzlies
+2025-07-29 15:33:17,388 - INFO - 
+--- Scraping Miami Heat ---
+2025-07-29 15:33:17,388 - INFO - URL: https://recruiting.ultipro.com/MIA1004MHLP/JobBoard/b34868a3-6ce1-4a28-b8fb-afb1cd5be9d3/?q=&o=postedDateDesc
+2025-07-29 15:33:18,757 - INFO - Searching...
+2025-07-29 15:33:18,778 - INFO - Found 26 job elements
+2025-07-29 15:33:19,004 - INFO - No matching jobs found for Miami Heat
+2025-07-29 15:33:19,004 - INFO - 
+--- Scraping Milwaukee Bucks ---
+2025-07-29 15:33:19,004 - INFO - URL: https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=035c77cb-5b5c-4e48-b858-605ab1663076&ccId=19000101_000001&type=JS&lang=en_US
+2025-07-29 15:33:22,134 - INFO - Searching...
+2025-07-29 15:33:27,152 - INFO - No matching jobs found for Milwaukee Bucks
+2025-07-29 15:33:27,153 - INFO - 
+--- Scraping Minnesota Timberwolves ---
+2025-07-29 15:33:27,153 - INFO - URL: https://jobs.dayforcehcm.com/en-US/packportal/CANDIDATEPORTAL
+2025-07-29 15:33:32,466 - INFO - Searching...
+2025-07-29 15:33:33,949 - INFO - Found 8 job elements
+2025-07-29 15:33:33,992 - INFO - Found 2 matching jobs for Minnesota Timberwolves
+2025-07-29 15:33:33,992 - INFO - 
+--- Scraping New Orleans Pelicans ---
+2025-07-29 15:33:33,992 - INFO - URL: http://dayforcehcm.com/CandidatePortal/en-US/bensonenterprises/SITE/SAINTSPELSCAREERS
+2025-07-29 15:33:36,060 - INFO - Searching...
+2025-07-29 15:33:37,505 - INFO - Found 24 job elements
+2025-07-29 15:33:37,636 - INFO - No matching jobs found for New Orleans Pelicans
+2025-07-29 15:33:37,636 - INFO - 
+--- Scraping New York Knicks ---
+2025-07-29 15:33:37,636 - INFO - URL: https://www.msgsports.com/jobs/?department=&location=
+2025-07-29 15:33:41,510 - INFO - Searching...
+2025-07-29 15:33:41,529 - INFO - Found 10 job elements
+2025-07-29 15:33:41,595 - INFO - No matching jobs found for New York Knicks
+2025-07-29 15:33:41,595 - INFO - 
+--- Scraping Oklahoma City Thunder ---
+2025-07-29 15:33:41,595 - INFO - URL: https://www.nba.com/thunder/employment
+2025-07-29 15:33:44,170 - INFO - Searching...
+2025-07-29 15:33:44,178 - INFO - Found 8 job elements
+2025-07-29 15:33:44,255 - INFO - No matching jobs found for Oklahoma City Thunder
+2025-07-29 15:33:44,255 - INFO - 
+--- Scraping Orlando Magic ---
+2025-07-29 15:33:44,255 - INFO - URL: https://recruiting.ultipro.com/ORL1001MAGIC/JobBoard/d2d331e7-e222-4a47-bb35-c640aa29a3d7/?q=&o=postedDateDesc
+2025-07-29 15:33:45,502 - INFO - Searching...
+2025-07-29 15:33:45,519 - INFO - Found 14 job elements
+2025-07-29 15:33:45,647 - INFO - No matching jobs found for Orlando Magic
+2025-07-29 15:33:45,647 - INFO - 
+--- Scraping Philadelphia 76ers ---
+2025-07-29 15:33:45,647 - INFO - URL: https://recruit.hirebridge.com/v3/CareerCenter/v2/?cid=8097
+2025-07-29 15:33:48,093 - INFO - Searching...
+2025-07-29 15:33:53,486 - INFO - No matching jobs found for Philadelphia 76ers
+2025-07-29 15:33:53,486 - INFO - 
+--- Scraping Phoenix Suns ---
+2025-07-29 15:33:53,486 - INFO - URL: http://recruiting2.ultipro.com/PHO1000PHXSE
+2025-07-29 15:33:55,728 - INFO - Searching...
+2025-07-29 15:33:55,747 - INFO - Found 8 job elements
+2025-07-29 15:33:55,830 - INFO - Found 1 matching jobs for Phoenix Suns
+2025-07-29 15:33:55,830 - INFO - 
+--- Scraping Portland Trail Blazers ---
+2025-07-29 15:33:55,830 - INFO - URL: https://jobs.ripcity.org/search/jobs?q=
+2025-07-29 15:33:56,841 - INFO - Searching...
+2025-07-29 15:34:01,860 - INFO - No matching jobs found for Portland Trail Blazers
+2025-07-29 15:34:01,860 - INFO - 
+--- Scraping Sacramento Kings ---
+2025-07-29 15:34:01,860 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/sacramento-kings-jobs/sacramento-kings
+2025-07-29 15:34:02,890 - INFO - Searching...
+2025-07-29 15:34:02,902 - INFO - Found 16 job elements
+2025-07-29 15:34:02,989 - INFO - Found 1 matching jobs for Sacramento Kings
+2025-07-29 15:34:02,989 - INFO - 
+--- Scraping San Antonio Spurs ---
+2025-07-29 15:34:02,989 - INFO - URL: https://jobs.dayforcehcm.com/en-US/onesse/CANDIDATEPORTAL
+2025-07-29 15:34:04,154 - INFO - Searching...
+2025-07-29 15:34:05,496 - INFO - Found 44 job elements
+2025-07-29 15:34:05,712 - INFO - No matching jobs found for San Antonio Spurs
+2025-07-29 15:34:05,712 - INFO - 
+--- Scraping Toronto Raptors ---
+2025-07-29 15:34:05,712 - INFO - URL: https://careers.smartrecruiters.com/MLSE3
+2025-07-29 15:34:07,449 - INFO - Searching...
+2025-07-29 15:34:07,465 - INFO - Found 25 job elements
+2025-07-29 15:34:07,689 - INFO - Found 1 matching jobs for Toronto Raptors
+2025-07-29 15:34:07,689 - INFO - 
+--- Scraping Utah Jazz ---
+2025-07-29 15:34:07,689 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/utah-jazz-jobs/utah-jazz
+2025-07-29 15:34:08,523 - INFO - Searching...
+2025-07-29 15:34:08,540 - INFO - Found 30 job elements
+2025-07-29 15:34:08,699 - INFO - No matching jobs found for Utah Jazz
+2025-07-29 15:34:08,700 - INFO - 
+--- Scraping Washington Wizards ---
+2025-07-29 15:34:08,700 - INFO - URL: https://www.teamworkonline.com/multiple-properties/monumentalsports/monumental-sports
+2025-07-29 15:34:09,506 - INFO - Searching...
+2025-07-29 15:34:14,541 - INFO - No matching jobs found for Washington Wizards
+2025-07-29 15:34:14,541 - INFO - 
+=== Scraping Complete ===
+2025-07-29 15:34:14,542 - INFO - Total teams with jobs: 7
+2025-07-29 15:34:14,542 - INFO - Total jobs found: 9
+2025-07-29 15:34:14,542 - INFO - Found 9 total matching job listings across 7 teams
+2025-07-29 15:34:15,220 - ERROR - Failed to send email: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor 71dfb90a1353d-538e28591efsm2358398e0c.24 - gsmtp')
+2025-07-29 15:34:15,220 - ERROR - Error sending email: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor 71dfb90a1353d-538e28591efsm2358398e0c.24 - gsmtp')
+2025-07-29 15:36:38,125 - INFO - Starting NBA Career Scraper
+2025-07-29 15:36:39,050 - INFO - Selenium WebDriver initialized with speed optimizations
+2025-07-29 15:36:39,050 - INFO - Starting job scraping from curated team URLs...
+2025-07-29 15:36:39,050 - INFO - Loaded 30 team URLs from data/team_urls.json
+2025-07-29 15:36:39,050 - INFO - Starting to scrape 30 team career pages...
+2025-07-29 15:36:39,050 - INFO - 
+--- Scraping Atlanta Hawks ---
+2025-07-29 15:36:39,050 - INFO - URL: https://wd1.myworkdaysite.com/en-US/recruiting/hawks/External
+2025-07-29 15:36:40,686 - INFO - Searching...
+2025-07-29 15:36:41,179 - INFO - Found 20 job elements
+2025-07-29 15:36:41,370 - INFO - Found 1 matching jobs for Atlanta Hawks
+2025-07-29 15:36:41,370 - INFO - 
+--- Scraping Boston Celtics ---
+2025-07-29 15:36:41,370 - INFO - URL: https://www.nba.com/celtics/careers
+2025-07-29 15:36:43,002 - INFO - Searching...
+2025-07-29 15:36:43,014 - INFO - Found 2 job elements
+2025-07-29 15:36:43,076 - INFO - No matching jobs found for Boston Celtics
+2025-07-29 15:36:43,076 - INFO - 
+--- Scraping Brooklyn Nets ---
+2025-07-29 15:36:43,076 - INFO - URL: https://www.bseglobal.net/careers/
+2025-07-29 15:36:44,915 - INFO - Searching...
+2025-07-29 15:36:49,936 - INFO - No matching jobs found for Brooklyn Nets
+2025-07-29 15:36:49,936 - INFO - 
+--- Scraping Charlotte Hornets ---
+2025-07-29 15:36:49,936 - INFO - URL: https://recruiting.ultipro.com/HOR1011HORNT/JobBoard/5b257d2d-0813-4167-b64c-95fb001e0d96/?q=&o=postedDateDesc
+2025-07-29 15:36:52,388 - INFO - Searching...
+2025-07-29 15:36:52,399 - INFO - Found 26 job elements
+2025-07-29 15:36:52,621 - INFO - Found 1 matching jobs for Charlotte Hornets
+2025-07-29 15:36:52,621 - INFO - 
+--- Scraping Chicago Bulls ---
+2025-07-29 15:36:52,621 - INFO - URL: https://www.nba.com/bulls/career-opportunities
+2025-07-29 15:36:53,571 - INFO - Searching...
+2025-07-29 15:36:58,582 - INFO - No matching jobs found for Chicago Bulls
+2025-07-29 15:36:58,582 - INFO - 
+--- Scraping Cleveland Cavaliers ---
+2025-07-29 15:36:58,582 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/cleveland-cavaliers/cleveland-cavaliers-jobs
+2025-07-29 15:36:59,939 - INFO - Searching...
+2025-07-29 15:36:59,950 - INFO - Found 34 job elements
+2025-07-29 15:37:00,126 - INFO - No matching jobs found for Cleveland Cavaliers
+2025-07-29 15:37:00,126 - INFO - 
+--- Scraping Dallas Mavericks ---
+2025-07-29 15:37:00,126 - INFO - URL: https://recruitingbypaycor.com/career/CareerHome.action?clientId=8a7883c68eee9454018ef2f81a7d05a4
+2025-07-29 15:37:01,526 - INFO - Searching...
+2025-07-29 15:37:01,542 - INFO - Found 3 job elements
+2025-07-29 15:37:01,586 - INFO - No matching jobs found for Dallas Mavericks
+2025-07-29 15:37:01,586 - INFO - 
+--- Scraping Denver Nuggets ---
+2025-07-29 15:37:01,586 - INFO - URL: https://www.ballarena.com/careers
+2025-07-29 15:37:04,083 - INFO - Searching...
+2025-07-29 15:37:09,123 - INFO - No matching jobs found for Denver Nuggets
+2025-07-29 15:37:09,123 - INFO - 
+--- Scraping Detroit Pistons ---
+2025-07-29 15:37:09,124 - INFO - URL: https://recruiting.paylocity.com/recruiting/jobs/All/19408bc7-4e69-4ea7-9ff6-3e39455d6469/Detroit-Pistons
+2025-07-29 15:37:14,762 - INFO - Searching...
+2025-07-29 15:37:14,781 - INFO - Found 3 job elements
+2025-07-29 15:37:14,823 - INFO - No matching jobs found for Detroit Pistons
+2025-07-29 15:37:14,824 - INFO - 
+--- Scraping Golden State Warriors ---
+2025-07-29 15:37:14,824 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/warriors/golden-state-warriors-careers
+2025-07-29 15:37:15,663 - INFO - Searching...
+2025-07-29 15:37:15,681 - INFO - Found 26 job elements
+2025-07-29 15:37:15,822 - INFO - No matching jobs found for Golden State Warriors
+2025-07-29 15:37:15,822 - INFO - 
+--- Scraping Houston Rockets ---
+2025-07-29 15:37:15,822 - INFO - URL: https://recruitingbypaycor.com/career/CareerHome.action?clientId=8a7883c689b7fbd50189ffa65b61208d
+2025-07-29 15:37:16,677 - INFO - Searching...
+2025-07-29 15:37:16,695 - INFO - Found 25 job elements
+2025-07-29 15:37:16,901 - INFO - No matching jobs found for Houston Rockets
+2025-07-29 15:37:16,901 - INFO - 
+--- Scraping Indiana Pacers ---
+2025-07-29 15:37:16,901 - INFO - URL: https://pse.hrmdirect.com/employment/job-openings.php?search=true&
+2025-07-29 15:37:18,032 - INFO - Searching...
+2025-07-29 15:37:18,050 - INFO - Found 13 job elements
+2025-07-29 15:37:18,167 - INFO - Found 2 matching jobs for Indiana Pacers
+2025-07-29 15:37:18,167 - INFO - 
+--- Scraping Los Angeles Clippers ---
+2025-07-29 15:37:18,167 - INFO - URL: https://www.nba.com/clippers/company/careers/openpositions
+2025-07-29 15:37:20,972 - INFO - Searching...
+2025-07-29 15:37:26,020 - INFO - No matching jobs found for Los Angeles Clippers
+2025-07-29 15:37:26,021 - INFO - 
+--- Scraping Los Angeles Lakers ---
+2025-07-29 15:37:26,021 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/los-angeles-lakers/los-angeles-lakers-jobs
+2025-07-29 15:37:26,800 - INFO - Searching...
+2025-07-29 15:37:26,818 - INFO - Found 12 job elements
+2025-07-29 15:37:26,894 - INFO - No matching jobs found for Los Angeles Lakers
+2025-07-29 15:37:26,895 - INFO - 
+--- Scraping Memphis Grizzlies ---
+2025-07-29 15:37:26,895 - INFO - URL: https://careers-grizzlies.icims.com/jobs/search
+2025-07-29 15:37:33,645 - INFO - Searching...
+2025-07-29 15:37:34,092 - INFO - Found 1 job elements
+2025-07-29 15:37:34,104 - INFO - No matching jobs found for Memphis Grizzlies
+2025-07-29 15:37:34,105 - INFO - 
+--- Scraping Miami Heat ---
+2025-07-29 15:37:34,105 - INFO - URL: https://recruiting.ultipro.com/MIA1004MHLP/JobBoard/b34868a3-6ce1-4a28-b8fb-afb1cd5be9d3/?q=&o=postedDateDesc
+2025-07-29 15:37:35,419 - INFO - Searching...
+2025-07-29 15:37:35,431 - INFO - Found 26 job elements
+2025-07-29 15:37:35,640 - INFO - No matching jobs found for Miami Heat
+2025-07-29 15:37:35,640 - INFO - 
+--- Scraping Milwaukee Bucks ---
+2025-07-29 15:37:35,640 - INFO - URL: https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=035c77cb-5b5c-4e48-b858-605ab1663076&ccId=19000101_000001&type=JS&lang=en_US
+2025-07-29 15:37:38,577 - INFO - Searching...
+2025-07-29 15:37:43,610 - INFO - No matching jobs found for Milwaukee Bucks
+2025-07-29 15:37:43,611 - INFO - 
+--- Scraping Minnesota Timberwolves ---
+2025-07-29 15:37:43,611 - INFO - URL: https://jobs.dayforcehcm.com/en-US/packportal/CANDIDATEPORTAL
+2025-07-29 15:37:45,209 - INFO - Searching...
+2025-07-29 15:37:46,949 - INFO - Found 8 job elements
+2025-07-29 15:37:46,993 - INFO - Found 2 matching jobs for Minnesota Timberwolves
+2025-07-29 15:37:46,993 - INFO - 
+--- Scraping New Orleans Pelicans ---
+2025-07-29 15:37:46,993 - INFO - URL: http://dayforcehcm.com/CandidatePortal/en-US/bensonenterprises/SITE/SAINTSPELSCAREERS
+2025-07-29 15:37:49,085 - INFO - Searching...
+2025-07-29 15:37:50,217 - INFO - Found 24 job elements
+2025-07-29 15:37:50,334 - INFO - No matching jobs found for New Orleans Pelicans
+2025-07-29 15:37:50,334 - INFO - 
+--- Scraping New York Knicks ---
+2025-07-29 15:37:50,334 - INFO - URL: https://www.msgsports.com/jobs/?department=&location=
+2025-07-29 15:37:53,034 - INFO - Searching...
+2025-07-29 15:37:53,053 - INFO - Found 10 job elements
+2025-07-29 15:37:53,108 - INFO - No matching jobs found for New York Knicks
+2025-07-29 15:37:53,108 - INFO - 
+--- Scraping Oklahoma City Thunder ---
+2025-07-29 15:37:53,108 - INFO - URL: https://www.nba.com/thunder/employment
+2025-07-29 15:37:54,040 - INFO - Searching...
+2025-07-29 15:37:54,053 - INFO - Found 8 job elements
+2025-07-29 15:37:54,131 - INFO - No matching jobs found for Oklahoma City Thunder
+2025-07-29 15:37:54,131 - INFO - 
+--- Scraping Orlando Magic ---
+2025-07-29 15:37:54,131 - INFO - URL: https://recruiting.ultipro.com/ORL1001MAGIC/JobBoard/d2d331e7-e222-4a47-bb35-c640aa29a3d7/?q=&o=postedDateDesc
+2025-07-29 15:37:55,408 - INFO - Searching...
+2025-07-29 15:37:55,428 - INFO - Found 14 job elements
+2025-07-29 15:37:55,553 - INFO - No matching jobs found for Orlando Magic
+2025-07-29 15:37:55,553 - INFO - 
+--- Scraping Philadelphia 76ers ---
+2025-07-29 15:37:55,553 - INFO - URL: https://recruit.hirebridge.com/v3/CareerCenter/v2/?cid=8097
+2025-07-29 15:37:57,947 - INFO - Searching...
+2025-07-29 15:38:02,990 - INFO - No matching jobs found for Philadelphia 76ers
+2025-07-29 15:38:02,991 - INFO - 
+--- Scraping Phoenix Suns ---
+2025-07-29 15:38:02,991 - INFO - URL: http://recruiting2.ultipro.com/PHO1000PHXSE
+2025-07-29 15:38:04,143 - INFO - Searching...
+2025-07-29 15:38:04,609 - INFO - Found 8 job elements
+2025-07-29 15:38:04,674 - INFO - Found 1 matching jobs for Phoenix Suns
+2025-07-29 15:38:04,674 - INFO - 
+--- Scraping Portland Trail Blazers ---
+2025-07-29 15:38:04,674 - INFO - URL: https://jobs.ripcity.org/search/jobs?q=
+2025-07-29 15:38:05,557 - INFO - Searching...
+2025-07-29 15:38:10,570 - INFO - No matching jobs found for Portland Trail Blazers
+2025-07-29 15:38:10,570 - INFO - 
+--- Scraping Sacramento Kings ---
+2025-07-29 15:38:10,570 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/sacramento-kings-jobs/sacramento-kings
+2025-07-29 15:38:11,423 - INFO - Searching...
+2025-07-29 15:38:11,441 - INFO - Found 16 job elements
+2025-07-29 15:38:11,539 - INFO - Found 1 matching jobs for Sacramento Kings
+2025-07-29 15:38:11,539 - INFO - 
+--- Scraping San Antonio Spurs ---
+2025-07-29 15:38:11,539 - INFO - URL: https://jobs.dayforcehcm.com/en-US/onesse/CANDIDATEPORTAL
+2025-07-29 15:38:12,667 - INFO - Searching...
+2025-07-29 15:38:14,521 - INFO - Found 44 job elements
+2025-07-29 15:38:14,738 - INFO - No matching jobs found for San Antonio Spurs
+2025-07-29 15:38:14,738 - INFO - 
+--- Scraping Toronto Raptors ---
+2025-07-29 15:38:14,738 - INFO - URL: https://careers.smartrecruiters.com/MLSE3
+2025-07-29 15:38:16,406 - INFO - Searching...
+2025-07-29 15:38:16,423 - INFO - Found 25 job elements
+2025-07-29 15:38:16,645 - INFO - Found 1 matching jobs for Toronto Raptors
+2025-07-29 15:38:16,645 - INFO - 
+--- Scraping Utah Jazz ---
+2025-07-29 15:38:16,645 - INFO - URL: https://www.teamworkonline.com/basketball-jobs/utah-jazz-jobs/utah-jazz
+2025-07-29 15:38:17,418 - INFO - Searching...
+2025-07-29 15:38:17,434 - INFO - Found 30 job elements
+2025-07-29 15:38:17,588 - INFO - No matching jobs found for Utah Jazz
+2025-07-29 15:38:17,588 - INFO - 
+--- Scraping Washington Wizards ---
+2025-07-29 15:38:17,588 - INFO - URL: https://www.teamworkonline.com/multiple-properties/monumentalsports/monumental-sports
+2025-07-29 15:38:18,416 - INFO - Searching...
+2025-07-29 15:38:23,427 - INFO - No matching jobs found for Washington Wizards
+2025-07-29 15:38:23,427 - INFO - 
+=== Scraping Complete ===
+2025-07-29 15:38:23,427 - INFO - Total teams with jobs: 7
+2025-07-29 15:38:23,427 - INFO - Total jobs found: 9
+2025-07-29 15:38:23,427 - INFO - Found 9 total matching job listings across 7 teams
+2025-07-29 15:38:24,681 - INFO - Email sent successfully to jmole12@gmail.com
+2025-07-29 15:38:24,682 - INFO - Email sent successfully

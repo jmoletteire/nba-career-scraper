@@ -4,16 +4,6 @@ import os
 from datetime import datetime
 import hashlib
 
-def load_json(filepath):
-    """Legacy function for backward compatibility"""
-    with open(filepath, 'r') as file:
-        return json.load(file)
-
-def save_json(filepath, data):
-    """Legacy function for backward compatibility"""
-    with open(filepath, 'w') as file:
-        json.dump(data, file, indent=4)
-
 def setup_logging(log_dir='logs'):
     """Set up logging configuration"""
     if not os.path.exists(log_dir):
@@ -131,6 +121,7 @@ def ensure_directories_exist():
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
             logging.info(f"Created directory: {dir_path}")
+            
 def log_message(message, log_file='logs/app.log'):
     import logging
     logging.basicConfig(filename=log_file, level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')

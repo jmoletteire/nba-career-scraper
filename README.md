@@ -70,7 +70,7 @@ SMTP_PORT=587
 
 ### 3. Customize Keywords
 
-Edit `data/keywords.json` to specify the job types you're interested in:
+Edit `data/keywords.json` to specify the job types you're interested (or not interested) in:
 
 ```json
 {
@@ -85,7 +85,8 @@ Edit `data/keywords.json` to specify the job types you're interested in:
     "player development",
     "sports performance",
     "communications"
-  ]
+  ],
+  "exclude": ["finance", "PR", "human resources"]
 }
 ```
 
@@ -107,7 +108,7 @@ python src/main.py
 
 ## 🔧 How It Works
 
-1. **Team Discovery**: The scraper visits https://careers.nba.com/teams/ to discover all NBA team career page URLs
+1. **Team Links**: Stored in data/team_urls.json
 2. **Content Scraping**: For each team, it navigates to their career page and extracts job listings
 3. **Smart Parsing**: Uses multiple strategies to handle different website structures and find job information
 4. **Keyword Matching**: Filters jobs based on title and description keyword matches
@@ -145,7 +146,7 @@ Feel free to fork and scrape more info!
 ### Data Files
 
 - **`data/keywords.json`**: Customize job search keywords
-- **`data/team_urls.json`**: Auto-generated team URLs (can be manually edited)
+- **`data/team_urls.json`**: Team URLs (can be manually edited)
 
 ## 🔍 Monitoring
 
